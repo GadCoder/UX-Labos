@@ -1,0 +1,36 @@
+@charset "uft-8";
+
+body {
+  background-image: url("img/fondo.png");
+}
+div {
+  width: 1004px;
+  height: 658px;
+  margin: auto;
+}
+header {
+  background-color: #f3c;
+}
+nav {
+  height: 340px;
+  background-color: #960;
+}
+
+article {
+  width: 652px;
+  height: 680px;
+  background-color: #ffffff;
+  float: left;
+}
+
+aside {
+  width: 352px;
+  height: 670px;
+  background-color: #fc0;
+  float: left;
+}
+footer {
+  height: 243px;
+  background-color: #f3c;
+  clear: both;
+}
