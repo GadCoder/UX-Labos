@@ -1,0 +1,29 @@
+body
+{   background:url(../img/bg.jpg);    
+}
+
+header {
+    background:#6dc5dd;
+    padding: 1em;
+    padding-bottom: 2em;
+}
+
+.nav-dropdown {
+    padding: 8px 0px    ;
+}
+
+.nav-item:hover {
+    background-color: rgb(208, 208, 208) !important;
+}
+
+
+
+#carouselExample {
+    padding: 0px;
+
+}
+
+.carousel-inner {
+    padding: 0px;
+
+}

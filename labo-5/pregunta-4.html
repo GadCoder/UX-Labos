@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Labo 5 - Pregunta 4</title>
+    <style>
+      body {
+        display: flex;
+        background-color: gray;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <section style="background: rgb(219, 215, 215); padding: 50px">
+        <form action="">
+          <table border="10">
+            <tbody>
+              <tr>
+                <td>
+                  <label for="usuario">Usuario</label>
+                </td>
+                <td>
+                  <input type="text" name="usuario" id="usuario" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="clave">Clave</label>
+                </td>
+                <td>
+                  <input type="text" name="clave" id="clave" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <button onclick="validarUsuario()">Entrar</button>
+                </td>
+                <td>
+                  <button>Salir</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+      </section>
+    </div>
+    <script>
+      function validarUsuario() {
+        const credenciales = [
+          ["german", "123"],
+          ["profesor", "123"],
+        ];
+        const usuario = document.getElementById("usuario").value;
+        const clave = document.getElementById("clave").value;
+
+        if (usuario == "" || clave == "") {
+          alert("Los campos de usuario o clave no pueden estar vacios");
+          return;
+        }
+        let usuarioExiste = false;
+
+        credenciales.forEach((datos) => {
+          const [usuarioRegistrado, claveRegistrada] = datos;
+          if (usuario == usuarioRegistrado) {
+            if (clave != claveRegistrada) {
+              alert("Contraseña ingresada incorrecta");
+              usuarioExiste = true;
+            } else {
+              window.location.href = "sesion-iniciada.html";
+            }
+          }
+        });
+        if (!usuarioExiste) alert("Usuario no registrado");
+      }
+    </script>
+  </body>
+</html>

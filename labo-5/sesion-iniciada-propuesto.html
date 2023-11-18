@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Propuesto - principal</title>
+    <style>
+      #logo-google {
+        max-width: 30vh;
+      }
+      #salir {
+        width: 60px;
+        height: 30px;
+      }
+
+      #cerrar-sesion {
+        width: 80px;
+        height: 100px;
+        display: flex;
+        background-color: rgb(226, 221, 221);
+        padding: 10px;
+        border-radius: 15px;
+        text-align: center;
+        align-items: start;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      header {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+      }
+      #mantenimiento {
+        text-align: center;
+        height: 30px;
+        background-color: brown;
+        color: white;
+      }
+      table {
+        border-collapse: collapse;
+        width: 50%;
+        margin: 0 auto;
+        margin-top: 3em;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        text-align: center;
+        padding: 10px;
+      }
+
+      th {
+        background-color: brown;
+        color: white;
+      }
+      #botones {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        gap: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <span>
+        <img src="google.png" alt="google" id="logo-google" />
+      </span>
+      <span>
+        <img src="google.png" alt="google" id="logo-google" />
+      </span>
+      <span>
+        <img src="google.png" alt="google" id="logo-google" />
+      </span>
+      <span>
+        <img src="google.png" alt="google" id="logo-google" />
+      </span>
+      <div id="cerrar-sesion">
+        <a href="propuesto.html">
+          <h3>Cerrar sesión</h3>
+          <img src="salir.png" alt="" id="salir" />
+        </a>
+      </div>
+    </header>
+    <section id="mantenimiento">
+      <h3>MANTENIMIENTO DE LA TABLA DOCENTE</h3>
+    </section>
+    <section>
+      <table>
+        <thead>
+          <tr>
+            <th>Elegir</th>
+            <th>Codigo</th>
+            <th>Nombre</th>
+            <th>Apellido Paterno</th>
+            <th>Apellido Materno</th>
+            <th>DNI</th>
+            <th>Edad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="radio" /></td>
+            <td>49</td>
+            <td>KIKE</td>
+            <td>CHIARA</td>
+            <td>LINARES</td>
+            <td>123456</td>
+            <td>25</td>
+          </tr>
+          <tr>
+            <td><input type="radio" /></td>
+            <td>2</td>
+            <td>LARISSA</td>
+            <td>PETRLINK</td>
+            <td>AZABACHE</td>
+            <td>111</td>
+            <td>25</td>
+          </tr>
+          <tr>
+            <td><input type="radio" /></td>
+            <td>70</td>
+            <td>enrique</td>
+            <td>chiara</td>
+            <td>linares</td>
+            <td>40906731</td>
+            <td>29</td>
+          </tr>
+          <tr>
+            <td><input type="radio" /></td>
+            <td>54</td>
+            <td>CLARISA</td>
+            <td>VERA</td>
+            <td>GUIZADO</td>
+            <td>2349</td>
+            <td>34</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="botones">
+      <span>
+        <button>Nuevo</button>
+      </span>
+      <span><button>Eliminar</button></span>
+      <span><button>Modificar</button></span>
+      <span><button>Visualizar</button></span>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+body
+{   background:url(../img/bg.jpg);    
+}
+header {
+    background:#6dc5dd;
+    padding: 1em;
+    padding-bottom: 2em;
+}
+
+footer {
+    text-align: center;
+    background:#6dc5dd;
+    color: white;
+
+}
+.nav-dropdown {
+    padding: 8px 0px    ;
+}
+
+.nav-item:hover {
+    background-color: rgb(208, 208, 208) !important;
+}
+
+
+
+#carouselExample {
+    padding: 0px;
+
+}
+
+.carousel-inner {
+    padding: 0px;
+}
+
+ul.social {
+    padding: 0;
+    list-style: none;
+}
+
+ul.social li:first-child {
+    margin-left: 0px;
+}
+ul.social li {
+    display: inline-block;
+    margin-left: 5px;
+}
+ul.social li a {
+    display: block;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+ul.social li a i {
+    width: 32px;
+    height: 32px;
+    display: block;
+    background: url(../img/img-sprite.png) #fff no-repeat;
+    border-radius: 1em;
+}
+ul.social li a i:hover {
+    opacity: 0.8;
+}
+
+ul.social li a i.fb {
+    background-position: -151px -116px;
+}
+
+ul.social li a i.tw {
+    background-position: -197px -118px;
+}
+
+.social {
+    display: flex;
+    justify-content: end;
+}

@@ -1,0 +1,189 @@
+/* Reset some default styles to ensure a consistent starting point */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+
+section {
+    margin: 2em ;
+}
+h1 {
+    text-align: center;
+    color: #660;
+}
+
+
+table {
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.4em;
+    font-style: normal;
+    border-collapse: separate;
+
+}
+
+/* TABLA 1*/
+#table-1 thead th {
+    padding: 15px;
+    color: #fff;
+    border: 1px solid #93CE37;
+    border-bottom: 3px solid #9ED929;
+    background-color: #9DD929;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px
+
+}
+
+#table-1 thead th:empty {
+    background: transparent;
+    border: none;
+}
+
+#table-1 tbody th {
+    color: #fff;
+    background-color: #9DD929;
+    border: 1px solid #93CE37;
+    border-right: 3px solid #9ED929;
+    padding: 0px 10px;
+    -moz-border-radius: 5px 0px 0px 5px;
+    border-radius: 5px 0px 0px 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px
+}
+
+#table-1 tfoot td {
+    color: #9CD009;
+    font-size: 32px;
+    text-align: center;
+    padding: 10px 0px;
+}
+
+#table-1 tfoot th {
+    color: #666;
+}
+#table-1 tbody td {
+    padding: 10px;
+    text-align: center;
+    background-color: #DEF3CA;
+    border: 2px solid #E7EFE0;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    color: #666
+}
+
+
+/* TABLA 2 */
+#table-2 thead th {
+    padding: 15px;
+    color: #fff;
+    background-color: #080b02;
+}
+
+#table-2 thead th:empty {
+    background: transparent;
+    border: none;
+}
+
+#table-2 tbody th {
+    color: #000000;
+    background-color: #fafafa;
+    text-align: end;
+    padding: 0px 10px;
+}
+
+#table-2 tfoot td {
+    color: #f7b016;
+    font-size: 32px;
+    text-align: center;
+    background-color: #080b02;
+    padding: 10px 0px;
+}
+
+#table-2 tfoot th {
+    color: #757472;
+    background-color: #ffffff;
+
+}
+
+#table-2 tbody td {
+    padding: 10px;
+    text-align: center;
+    background-color: #cacaca;
+    color: #666
+}
+
+
+
+/* TABLA 1*/
+#table-3 thead th {
+    padding: 15px;
+    color: #000000;
+    border-bottom: 1px solid #000000;
+ 
+}
+
+#table-3 thead th:empty {
+    background: transparent;
+    border: none;
+}
+
+#table-3 tbody th {
+    color: #727272;
+    padding: 0px 10px;
+    text-align: end;
+    -moz-border-radius: 5px 0px 0px 5px;
+    border-radius: 5px 0px 0px 5px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px
+}
+
+#table-3 tfoot td {
+    color: #000000;
+    font-size: 32px;
+    text-align: center;
+    padding: 10px 0px;
+}
+
+#table-3 tfoot th {
+    color: #000000;
+}
+#table-3 tbody td {
+    padding: 10px;
+    text-align: center;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    color: #ffffff;
+    background-color: #8d8989; /* Change to your desired background color */
+
+}
+
+.darker {
+  /* Your styles for the first and last td elements when a th is even or odd go here */
+  background-color: #464343 !important; /* Change to your desired background color */
+  font-weight: bold; /* Add other styles as needed */
+}
+
+
+.blue-1 {
+  background-color: #94b8e8 !important; /* Change to your desired background color */
+}
+.blue-2 {
+    background-color: #5e91d4 !important; /* Change to your desired background color */
+}
+.blue-3 {
+    background-color: #4073b6 !important; /* Change to your desired background color */
+}
+.blue-4 {
+    background-color: #275ba0 !important; /* Change to your desired background color */
+}

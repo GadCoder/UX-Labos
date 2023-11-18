@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Labo-2</title>
+  </head>
+  <body>
+    <header>
+      <h1>Laboratorio 1</h1>
+    </header>
+    <section>
+      <h2>Primer ejercicio</h2>
+      <form id="input-form">
+        <table border="10">
+          <tr>
+            <td>
+              <label for="code">Código: </label>
+            </td>
+            <td>
+              <input type="text" name="code" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="names">Nombre: </label>
+            </td>
+            <td>
+              <input type="text" name="names" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="lastnames">Apellido: </label>
+            </td>
+            <td>
+              <input type="text" name="lastnames" />
+            </td>
+          </tr>
+        </table>
+      </form>
+      <table border="10">
+        <tr>
+          <td>
+            <button onclick="adicionar()">Adicionar</button>
+          </td>
+          <td>
+            <button onclick="mostrar()">Mostrar</button>
+          </td>
+        </tr>
+      </table>
+      <table id="content-table">
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Segundo Ejercicio</h2>
+      <table border="8">
+        <tr>
+          <td>
+            <button id="nuevo2" onclick="habilitarBotones([0,0,1,1], '2')">
+              Nuevo
+            </button>
+          </td>
+          <td>
+            <button id="grabar2" onclick="habilitarBotones([0,1,0,0], '2')">
+              Grabar
+            </button>
+          </td>
+          <td><button id="eliminar2" disabled>Eliminar</button></td>
+          <td><button id="modificar2" disabled>Modificar</button></td>
+        </tr>
+      </table>
+    </section>
+    <section>
+      <h2>Tercer Ejercicio</h2>
+    </section>
+    <form id="input-form">
+      <table border="10">
+        <tr>
+          <td>
+            <label for="code">Código: </label>
+          </td>
+          <td>
+            <input type="text" name="code3" id="codigo3" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="names">Nombre: </label>
+          </td>
+          <td>
+            <input type="text" name="names3" id="nombre3" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="lastnames">Apellido: </label>
+          </td>
+          <td>
+            <input type="text" name="lastnames1" id="apellido3" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="lastnames">Sexo: </label>
+          </td>
+          <td>
+            <select name="sexo" id="sexo3">
+              <option value="M">M</option>
+              <option value="M">F</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="lastnames">Estado civil: </label>
+          </td>
+          <td>
+            <select name="estadoCivil3" id="estadoCivil3">
+              <option value="soltero">Soltero</option>
+              <option value="casado">Casado</option>
+              <option value="viudo">Viudo</option>
+              <option value="viudo">Divorciado</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+    </form>
+    <table border="8">
+      <tr>
+        <td>
+          <button
+            id="nuevo3"
+            onclick="habilitarEjercicio3([0,0,1,1], [0,0,0,0,0])"
+          >
+            Nuevo
+          </button>
+        </td>
+        <td>
+          <button
+            id="grabar3"
+            onclick="habilitarEjercicio3([0,1,0,0], [0,0,0,0,0])"
+          >
+            Grabar
+          </button>
+        </td>
+        <td>
+          <button
+            id="eliminar3"
+            disabled
+            onclick="habilitarEjercicio3([0,1,0,0], [1,0,0,0,0])"
+          >
+            Eliminar
+          </button>
+        </td>
+        <td>
+          <button
+            id="modificar3"
+            disabled
+            onclick="habilitarEjercicio3([0,1,0,0], [1,0,0,0,0])"
+          >
+            Modificar
+          </button>
+        </td>
+      </tr>
+    </table>
+
+    <script>
+      function getInfoFromInput() {
+        const form = document.getElementById("input-form");
+        const codigo = form.elements.code.value;
+        const names = form.elements.names.value;
+        const lastnames = form.elements.lastnames.value;
+        return [codigo, names, lastnames];
+      }
+      function mostrar() {
+        const [codigo, names, lastnames] = getInfoFromInput();
+        alert(codigo + "-" + names + "-" + lastnames);
+      }
+      function adicionar() {
+        const info = getInfoFromInput();
+        const tableRow = document.createElement("tr");
+        info.map((data) => {
+          const td = document.createElement("td");
+          td.textContent = data;
+          tableRow.append(td);
+        });
+        const table = document.getElementById("content-table");
+        const tbody = table.getElementsByTagName("tbody")[0];
+        tbody.append(tableRow);
+      }
+      function habilitarBotones(disabledValues, ejercicio) {
+        const [nuevoValue, grabarValue, eliminarValue, modificarValue] =
+          disabledValues;
+        const values = [
+          ["nuevo", nuevoValue],
+          ["grabar", grabarValue],
+          ["eliminar", eliminarValue],
+          ["modificar", modificarValue],
+        ];
+        values.map((data) => {
+          const [btnName, isDisabled] = data;
+          const btn = document.getElementById(btnName + ejercicio);
+          if (isDisabled) {
+            btn.setAttribute("disabled", "true");
+          } else {
+            btn.removeAttribute("disabled");
+          }
+        });
+      }
+      function habilitarEjercicio3(botones, campos) {
+        habilitarBotones(botones, "3");
+        const [
+          codigoValue,
+          nombreValue,
+          apellidoValue,
+          sexoValue,
+          estadoCivilValue,
+        ] = campos;
+        const values = [
+          ["codigo3", codigoValue],
+          ["nombre3", nombreValue],
+          ["apellido3", apellidoValue],
+          ["sexo3", sexoValue],
+          ["estadoCivil3", estadoCivilValue],
+        ];
+        values.map((data) => {
+          const [fieldName, isDisabled] = data;
+          const field = document.getElementById(fieldName);
+          field.disabled = isDisabled;
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Labo 5</title>
+    <style>
+      body {
+        width: 100vh;
+      }
+      #content {
+        width: 100vh;
+        height: 500px;
+      }
+      #guardar {
+        background-image: url("save-btn.png");
+        width: 200px;
+        height: 150px;
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-position-y: center;
+      }
+      #container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Laboratorio 5</h1>
+    </header>
+    <section>
+      <h2>Pregunta 1</h2>
+      <div style="background-color: grey">
+        <button onclick="update()" value="yellow" id="update">Entrar</button>
+      </div>
+      <div style="background-color: yellow" id="content"></div>
+    </section>
+    <section>
+      <h2>Pregunta 2</h2>
+      <div>
+        <button id="guardar">Guardar</button>
+      </div>
+    </section>
+    <section>
+      <h2>Pregunta 3</h2>
+      <div id="container"></div>
+    </section>
+    <section>
+      <h2>Pregunta 4</h2>
+      <h3><a href="pregunta-4.html">Ingresar</a></h3>
+    </section>
+    <section>
+      <h2>Ejercicio propuesto</h2>
+      <h3><a href="propuesto.html">Ingresar</a></h3>
+    </section>
+    <script>
+      function update() {
+        const btn = document.getElementById("update");
+        const content = document.getElementById("content");
+        const status = btn.value;
+        if (status == "yellow") {
+          btn.textContent = "Regresar";
+          btn.value = "red";
+          content.style.backgroundColor = "red";
+        } else {
+          btn.textContent = "Entrar";
+          btn.value = "yellow";
+          content.style.backgroundColor = "yellow";
+        }
+      }
+      function insertText() {
+        const values = [
+          ["PRIMERO", "yellow"],
+          ["SEGUNDO", "blue"],
+          ["TERCERO", "red"],
+          ["CUARTO", "orange"],
+          ["QUINTO", "green"],
+        ];
+        const container = document.getElementById("container");
+        values.map((data) => {
+          const [text, color] = data;
+          const row = document.createElement("div");
+          const header = document.createElement("h3");
+          header.textContent = text;
+          header.style.color = color;
+          row.appendChild(header);
+          container.appendChild(row);
+        });
+      }
+      insertText();
+    </script>
+  </body>
+</html>
