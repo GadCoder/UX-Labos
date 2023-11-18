@@ -1,0 +1,126 @@
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Labo 3 - Segunda parte</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <h1>Labo 3 - Segunda parte</h1>
+      </div>
+      <section>
+        <h2>Ejercicio 1</h2>
+        <div class="row">
+          <table class="table-bordered" id="table1" style="width: 50%">
+            <tbody>
+              <tr>
+                <td>
+                  <span>Ingrese un número</span>
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><input type="text" /></td>
+                <td>
+                  <button
+                    class="btn btn-primary"
+                    onclick="agregarCampoTexto1()"
+                  >
+                    Agregar
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section>
+        <h2>Ejercicio 2</h2>
+        <div class="row">
+          <table class="table-bordered" id="table2" style="width: 50%">
+            <tbody>
+              <tr>
+                <td>
+                  <span>Ingrese un número</span>
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><input type="text" /></td>
+                <td>
+                  <button
+                    class="btn btn-primary"
+                    onclick="agregarCampoTexto2()"
+                  >
+                    Agregar
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+    <script>
+      function createDeleteButton(rowID) {
+        const newBtn = document.createElement("button");
+        newBtn.classList.add("btn");
+        newBtn.classList.add("btn-danger");
+        newBtn.textContent = "X";
+        return newBtn;
+      }
+
+      function deleteRow(button) {
+        console.log(button);
+        const trContainer = button.originalTarget.parentNode.parentNode;
+        trContainer.remove();
+      }
+
+      function agregarCampoTexto1() {
+        const table = document.getElementById("table1");
+        const tbody = table.getElementsByTagName("tbody")[0];
+        const newRow = document.createElement("tr");
+        newRow;
+
+        const inputTd = document.createElement("td");
+
+        const newTextInput = document.createElement("input");
+        newTextInput.type = "text";
+
+        const newBtn = createDeleteButton(1);
+        inputTd.appendChild(newTextInput);
+        newBtn.addEventListener("click", deleteRow);
+        newRow.appendChild(inputTd);
+        tbody.appendChild(newRow);
+      }
+
+      function agregarCampoTexto2() {
+        const table = document.getElementById("table2");
+        const tbody = table.getElementsByTagName("tbody")[0];
+        const newRow = document.createElement("tr");
+        newRow;
+
+        const inputTd = document.createElement("td");
+        const deleteTd = document.createElement("td");
+
+        const newTextInput = document.createElement("input");
+        newTextInput.type = "text";
+
+        const newBtn = createDeleteButton(1);
+        inputTd.appendChild(newTextInput);
+        deleteTd.appendChild(newBtn);
+        newBtn.addEventListener("click", deleteRow);
+        newRow.appendChild(inputTd);
+        newRow.appendChild(deleteTd);
+        tbody.appendChild(newRow);
+      }
+    </script>
+  </body>
+</html>
