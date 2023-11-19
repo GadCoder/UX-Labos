@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Labo 7</title>
+  </head>
+  <body>
+    <header>
+      <h1>Labo 7</h1>
+    </header>
+    <section>
+      <h2>Ejercicio 1</h2>
+      <table border="5">
+        <thead>
+          <th>Código</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>0001</td>
+            <td>JUAN</td>
+            <td>PETRLIK</td>
+          </tr>
+          <tr>
+            <td>0002</td>
+            <td>ALBERTO</td>
+            <td>CARRANZA</td>
+          </tr>
+          <tr>
+            <td>0003</td>
+            <td>PABLO</td>
+            <td>TINEO</td>
+          </tr>
+          <tr>
+            <td>0004</td>
+            <td>IVAN</td>
+            <td>MARQUEZ</td>
+          </tr>
+          <tr>
+            <td>0005</td>
+            <td>ANDRES</td>
+            <td>PETRLIK</td>
+          </tr>
+          <tr>
+            <td>0006</td>
+            <td>LARISSA</td>
+            <td>PETRLIK</td>
+          </tr>
+          <tr>
+            <td>0007</td>
+            <td>SAMANTHA</td>
+            <td>PETRLIK</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Ejercicio 2</h2>
+      <table border="5">
+        <thead>
+          <th>Código</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Modificación</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>0001</td>
+            <td>JUAN</td>
+            <td>PETRLIK</td>
+            <td><button onclick="modificar(this)">modificar</button></td>
+          </tr>
+          <tr>
+            <td>0002</td>
+            <td>ALBERTO</td>
+            <td>CARRANZA</td>
+            <td><button onclick="modificar(this)">modificar</button></td>
+          </tr>
+          <tr>
+            <td>0003</td>
+            <td>PABLO</td>
+            <td>TINEO</td>
+            <td><button onclick="modificar(this)">modificar</button></td>
+          </tr>
+          <tr>
+            <td>0004</td>
+            <td>IVAN</td>
+            <td>MARQUEZ</td>
+            <td><button onclick="modificar(this)">modificar</button></td>
+          </tr>
+          <tr>
+            <td>0005</td>
+            <td>ANDRES</td>
+            <td>PETRLIK</td>
+            <td><button onclick="modificar(this)">modificar</button></td>
+          </tr>
+          <tr>
+            <td>0006</td>
+            <td>LARISSA</td>
+            <td>PETRLIK</td>
+            <td><button onclick="modificar(this)">modificar</button></td>
+          </tr>
+          <tr>
+            <td>0007</td>
+            <td>SAMANTHA</td>
+            <td>PETRLIK</td>
+            <td><button onclick="modificar(this)">modificar</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section>
+      <h2>Ejercicio 3</h2>
+      <form id="ejercicio3">
+        <label for="cadena">Cadena:</label>
+        <input type="text" name="cadena" id="cadena" />
+      </form>
+      <button onclick="procesarCadena()">Procesar</button>
+      <div id="content"></div>
+    </section>
+    <section>
+      <h2>Ejercicio 4,5,6,7</h2>
+      <a href="labo7.pdf">PDF</a>
+    </section>
+  </body>
+  <script>
+    function modificar(button) {
+      var row = button.parentNode.parentNode;
+
+      var codigo = row.cells[0].innerText;
+      var nombre = row.cells[1].innerText;
+      var apellido = row.cells[2].innerText;
+
+      alert(
+        "Código: " + codigo + "\nNombre: " + nombre + "\nApellido: " + apellido
+      );
+    }
+    function procesarCadena() {
+      const inputValue = document.getElementById("cadena").value;
+      if (inputValue.length < 1) return;
+      const contentDiv = document.getElementById("content");
+      const original = document.createElement("div");
+      original.textContent = "Cadena original: " + inputValue;
+      const largo = document.createElement("div");
+      largo.textContent = "Largo: " + inputValue.length;
+      const mayusculas = document.createElement("div");
+      mayusculas.textContent =
+        "Toda en mayúsculas: " + inputValue.toUpperCase();
+      const minusculas = document.createElement("div");
+      minusculas.textContent =
+        "Toda en minúsculas: " + inputValue.toLowerCase();
+      contentDiv.appendChild(original);
+      contentDiv.appendChild(largo);
+      contentDiv.appendChild(mayusculas);
+      contentDiv.appendChild(minusculas);
+    }
+  </script>
+</html>
